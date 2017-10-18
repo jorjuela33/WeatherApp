@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7sU-nC-kHS">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="kIW-qX-9kQ">
+            <objects>
+                <navigationController id="7sU-nC-kHS" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hjq-Do-fFd">
+                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hz8-Om-824" kind="relationship" relationship="rootViewController" id="jgc-as-Qgd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BVV-0S-DmX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-428" y="39"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="wUD-Zc-Y6i">
+            <objects>
+                <viewController id="hz8-Om-824" customClass="MapViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oGl-cu-u9f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zAJ-Sg-7zf" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zAJ-Sg-7zf" firstAttribute="bottom" secondItem="HCK-gP-Whw" secondAttribute="bottom" id="anU-VH-pHr"/>
+                            <constraint firstItem="zAJ-Sg-7zf" firstAttribute="leading" secondItem="HCK-gP-Whw" secondAttribute="leading" id="lw3-r3-yGc"/>
+                            <constraint firstItem="zAJ-Sg-7zf" firstAttribute="top" secondItem="oGl-cu-u9f" secondAttribute="top" id="qFX-8Y-W7k"/>
+                            <constraint firstItem="zAJ-Sg-7zf" firstAttribute="trailing" secondItem="HCK-gP-Whw" secondAttribute="trailing" id="qag-ji-0FP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HCK-gP-Whw"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map" id="F4F-O7-x6F"/>
+                    <connections>
+                        <outlet property="mapView" destination="zAJ-Sg-7zf" id="Rv1-eR-22z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gSe-pV-Z7l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="341.60000000000002" y="69.715142428785612"/>
+        </scene>
+        <!--Weather Detail View Controller-->
+        <scene sceneID="SRa-lO-QP2">
+            <objects>
+                <viewController storyboardIdentifier="WeatherDetailViewController" id="znQ-Fk-NHP" customClass="WeatherDetailViewController" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ENP-0S-KBn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTc-Fs-wA0">
+                                <rect key="frame" x="184" y="60" width="8" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOI-i6-EVp">
+                                <rect key="frame" x="184.5" y="86" width="6.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="100" translatesAutoresizingMaskIntoConstraints="NO" id="1HQ-M6-M9R">
+                                <rect key="frame" x="38" y="224" width="300" height="143.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="120"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity: -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3O-eO-ptb">
+                                <rect key="frame" x="145" y="392.5" width="85.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimun Temperature: -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ur5-hs-Kax">
+                                <rect key="frame" x="95.5" y="428.5" width="183.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximun Temperature: -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oqj-1C-ncw">
+                                <rect key="frame" x="93.5" y="464.5" width="188" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Oqj-1C-ncw" firstAttribute="top" secondItem="ur5-hs-Kax" secondAttribute="bottom" constant="15" id="1NU-q6-bxp"/>
+                            <constraint firstItem="e3O-eO-ptb" firstAttribute="top" secondItem="1HQ-M6-M9R" secondAttribute="bottom" constant="25" id="EXu-Zs-32P"/>
+                            <constraint firstItem="ZOI-i6-EVp" firstAttribute="centerX" secondItem="BCw-yy-owZ" secondAttribute="centerX" id="IMX-Wj-Obi"/>
+                            <constraint firstItem="ZOI-i6-EVp" firstAttribute="top" secondItem="FTc-Fs-wA0" secondAttribute="bottom" constant="5" id="L8G-pX-jzc"/>
+                            <constraint firstItem="FTc-Fs-wA0" firstAttribute="top" secondItem="BCw-yy-owZ" secondAttribute="top" constant="40" id="LyK-Ql-d6P"/>
+                            <constraint firstItem="Oqj-1C-ncw" firstAttribute="centerX" secondItem="BCw-yy-owZ" secondAttribute="centerX" id="RD0-Bs-XjA"/>
+                            <constraint firstItem="1HQ-M6-M9R" firstAttribute="centerY" secondItem="BCw-yy-owZ" secondAttribute="centerY" multiplier="0.86" id="XVg-AS-kxg"/>
+                            <constraint firstItem="ur5-hs-Kax" firstAttribute="top" secondItem="e3O-eO-ptb" secondAttribute="bottom" constant="15" id="ejo-a8-Ca3"/>
+                            <constraint firstItem="FTc-Fs-wA0" firstAttribute="centerX" secondItem="BCw-yy-owZ" secondAttribute="centerX" id="hJJ-as-iKQ"/>
+                            <constraint firstItem="1HQ-M6-M9R" firstAttribute="centerX" secondItem="BCw-yy-owZ" secondAttribute="centerX" id="jDH-Pf-MDv"/>
+                            <constraint firstItem="1HQ-M6-M9R" firstAttribute="width" secondItem="ENP-0S-KBn" secondAttribute="width" multiplier="0.8" id="oA8-xc-XLK"/>
+                            <constraint firstItem="ur5-hs-Kax" firstAttribute="centerX" secondItem="BCw-yy-owZ" secondAttribute="centerX" id="pVi-dd-hYS"/>
+                            <constraint firstItem="e3O-eO-ptb" firstAttribute="centerX" secondItem="BCw-yy-owZ" secondAttribute="centerX" id="ybU-hU-Nc9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BCw-yy-owZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="cityNameLabel" destination="FTc-Fs-wA0" id="9BN-fC-vaP"/>
+                        <outlet property="descriptionLabel" destination="ZOI-i6-EVp" id="BWH-fd-s03"/>
+                        <outlet property="humidityLabel" destination="e3O-eO-ptb" id="fJc-nQ-5Ks"/>
+                        <outlet property="maximunTemperatureLabel" destination="Oqj-1C-ncw" id="3I8-4F-kXk"/>
+                        <outlet property="minimunTemperatureLabel" destination="ur5-hs-Kax" id="eiG-kd-JTM"/>
+                        <outlet property="temperatureLabel" destination="1HQ-M6-M9R" id="oA8-6g-5XX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8qC-AU-pgx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1072.8" y="-20.239880059970016"/>
+        </scene>
+    </scenes>
+</document>

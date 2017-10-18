@@ -1,0 +1,14 @@
+{
+    "data": {
+        "type": "users",
+        "attributes": {
+            "email": "a@b.com",
+            "first-name": "Hernan",
+            "last-name": "Orozco",
+            "cellphone": "3045600841",
+            "created-at": "2017-09-13T22:41:07.614Z",
+            "updated-at": "2017-09-13T22:41:07.614Z",
+            "auth-token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5LCJleHAiOjE1MDU0Mjg4Njd9.4SmkgGQFybhX9FT5JSmz4yylKWZh9DlxKyO9YCvHSqU"
+        }
+    }
+}
