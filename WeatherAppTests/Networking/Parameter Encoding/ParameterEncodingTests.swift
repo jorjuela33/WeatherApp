@@ -1,15 +1,14 @@
 //
 //  ParameterEncodingTests.swift
-//  KountyTests
+//  WeatherAppTests
 //
-//  Created by Jorge Orjuela on 9/15/17.
-//  Copyright © 2017 Kounty. All rights reserved.
+//  Created by Jorge Orjuela on 10/18/17.
 //
 
 import XCTest
-@testable import Kounty
+@testable import WeatherApp
 
-class ParameterEncodingTests: KountyBaseTests {
+class ParameterEncodingTests: WeatherAppBaseTests {
     
     private let request = URLRequest(url: URL(string: "https://httpbin.org")!)
     

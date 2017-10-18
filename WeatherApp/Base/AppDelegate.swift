@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        if NSClassFromString("XCTestCase") != nil { return true }
+
         GMSServices.provideAPIKey("AIzaSyAABSS-NR9cvG2q2a-yZ3Z_zUeK4PH4Nq8")
 
         let rootViewController = UIStoryboard.init(storyBoardName: .main).instantiateInitialViewController() as? UINavigationController

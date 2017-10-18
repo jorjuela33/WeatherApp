@@ -1,13 +1,12 @@
 //
-//  KNOperationTests.swift
-//  KountyTests
+//  WHOperationTests.swift
+//  WeatherAppTests
 //
-//  Created by Jorge Orjuela on 9/15/17.
-//  Copyright © 2017 Kounty. All rights reserved.
+//  Created by Jorge Orjuela on 10/18/17.
 //
 
 import XCTest
-@testable import Kounty
+@testable import WeatherApp
 
 private struct OperationTestCondition: OperationCondition {
     
@@ -35,9 +34,9 @@ private struct OperationTestCondition: OperationCondition {
     }
 }
 
-class KNOperationTests: KountyBaseTests {
+class WHOperationTests: WeatherAppBaseTests {
     
-    private let operationQueue = KNOperationQueue()
+    private let operationQueue = WHOperationQueue()
     
     override func setUp() {
         super.setUp()
@@ -54,7 +53,7 @@ class KNOperationTests: KountyBaseTests {
     func testThatConditionShouldBeInvoked() {
         /// Given
         let expectation = self.expectation(description: "Condition expectation")
-        let operation = KNOperation()
+        let operation = WHOperation()
         
         /// When
         operation.addCondition(OperationTestCondition(expectation: expectation))
@@ -67,7 +66,7 @@ class KNOperationTests: KountyBaseTests {
     func testThatObserverShouldBeInvoked() {
         /// Given
         let expectation = self.expectation(description: "Observer expectation")
-        let operation = KNOperation()
+        let operation = WHOperation()
         var finishHandlerInvoked = false
         var produceHandlerInvoked = false
         var startHandlerInvoked = false
@@ -94,7 +93,7 @@ class KNOperationTests: KountyBaseTests {
     func testThatOperationShouldFailForCondition() {
         /// Given
         let expectation = self.expectation(description: "Failed Condition expectation")
-        let operation = KNOperation()
+        let operation = WHOperation()
         var errors: [Error]?
         
         /// When

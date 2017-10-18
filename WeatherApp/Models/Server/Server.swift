@@ -7,8 +7,8 @@
 
 import UIKit
 
-private let kountyDevApiURL = URL(string: "https://api.openweathermap.org")
-private let kountyDotComApiURL = URL(string: "https://api.openweathermap.org")
+private let weatherAppDevApiURL = URL(string: "https://api.openweathermap.org")
+private let weatherAppDotComApiURL = URL(string: "https://api.openweathermap.org")
 
 struct Server: Codable {
     
@@ -28,20 +28,20 @@ struct Server: Codable {
     /// the available servers
     static var servers: [Server] {
         return [
-            Server(name: "Development", url: kountyDevApiURL),
-            Server(name: "Production", url: kountyDotComApiURL)
+            Server(name: "Development", url: weatherAppDevApiURL),
+            Server(name: "Production", url: weatherAppDotComApiURL)
         ]
     }
 
     /// Returns a instance of the development server
     static var development: Server {
-        return Server(name: "Development", url: kountyDevApiURL)
+        return Server(name: "Development", url: weatherAppDevApiURL)
     }
 
     /// The default server is initialized with the
     /// production URL
     static var production: Server {
-        return Server(name: "Production", url: kountyDotComApiURL)
+        return Server(name: "Production", url: weatherAppDotComApiURL)
     }
 
     /// Returns the current URL with the api path
