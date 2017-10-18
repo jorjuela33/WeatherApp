@@ -22,7 +22,7 @@ final class GetWeatherOperation: WHOperation {
     
     init(persistentContainer: NSPersistentContainer,
          city: String,
-         country: String,      
+         country: String,
          currentServer: Server = Server.current(),
          sessionManager: SessionManager = SessionManager.shared) {
 
