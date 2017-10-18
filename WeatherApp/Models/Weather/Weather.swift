@@ -15,7 +15,6 @@ final class Weather: NSManagedObject {
 
     @NSManaged private(set) var city: String
     @NSManaged private(set) var country: String
-    @NSManaged private(set) var descriptionText: String
     @NSManaged private(set) var humidity: Double
     @NSManaged private var maximunTemperature: Double
     @NSManaged private var minimunTemperature: Double
@@ -61,7 +60,6 @@ extension Weather: ManagedObjectConvertible {
     public enum DictionaryKey: String {
         case city = "name"
         case country = "sys.country"
-        case descriptionText = "weather.description"
         case humidity = "main.humidity"
         case maximunTemperature = "main.temp_min"
         case minimunTemperature = "main.temp_max"
@@ -100,7 +98,6 @@ extension Weather: ManagedObjectConvertible {
         return findOrCreate(in: context, matchingPredicate: compoundPredicate) {
             $0.city = city.lowercased()
             $0.country = country.lowercased()
-            $0.descriptionText = dictionary[KeyPath(DictionaryKey.descriptionText.rawValue)] as? String ?? ""
             $0.humidity = humidity
             $0.maximunTemperature = maximunTemperature
             $0.minimunTemperature = minimunTemperature

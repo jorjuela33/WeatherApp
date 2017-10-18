@@ -15,7 +15,6 @@ class WeatherDetailViewController: UIViewController {
     private var fetchedResultsController: NSFetchedResultsController<Weather>?
 
     @IBOutlet var cityNameLabel: UILabel!
-    @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var humidityLabel: UILabel!
     @IBOutlet var maximunTemperatureLabel: UILabel!
     @IBOutlet var minimunTemperatureLabel: UILabel!
@@ -66,7 +65,6 @@ class WeatherDetailViewController: UIViewController {
 
         guard let weather = Weather.findOrFetch(in: persistentContainer.viewContext, matchingPredicate: compoundPredicate) else { return }
 
-        descriptionLabel.text = weather.descriptionText
         humidityLabel.text = "Humidity: \(weather.humidity)"
         maximunTemperatureLabel.text = "Maximun Temperature: \(weather.readableMaximunTemperature)"
         minimunTemperatureLabel.text = "Minimun Temperature: \(weather.readableMinimunTemperature)"
